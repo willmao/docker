@@ -1,0 +1,10 @@
+version: "2"
+services:
+  xx-net:
+    build: .
+    container_name: xxnet
+    ports:
+      - "8085-8087:8085-8087"
+    volumes:
+      - ./scripts/start:/home/xxnet/XX-Net-3.3.1/start
+      - ./data/:/home/xxnet/XX-Net-3.3.1/data/

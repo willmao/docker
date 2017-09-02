@@ -1,0 +1,19 @@
+version: "3"
+services:
+  frp-server:
+    build: ./server/
+    container_name: frp-server
+    image: willmao/frp-server
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./config/frps.ini:/root/frp/frps.ini
+
+  frp-client:
+    build: ./client
+    container_name: cow-client
+    image: willmao/frp-client
+    ports:
+      - "7777:7777"
+    volumes:
+      - ./config/frpc.ini:/root/frp/frpc.ini

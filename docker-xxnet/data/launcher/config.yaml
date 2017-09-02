@@ -1,0 +1,7 @@
+language: zh_CN
+modules:
+  gae_proxy: {auto_start: 1, show_detail: 1}
+  launcher: {allow_remote_connect: 1, auto_start: 1, control_port: 8085, last_run_version: 3.3.1,
+    proxy: pac, xxnet_port: 8087}
+  x_tunnel: {auto_start: 0}
+update: {last_path: /home/will/Downloads/XX-Net-3.3.1/code/default/launcher, uuid: 004e6a4a-47c3-4031-9f39-3a54398da1c9}
