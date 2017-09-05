@@ -1,0 +1,8 @@
+version: "3"
+services:
+  ss-server:
+    build: .
+    container_name: ss-server
+    image: willmao/ss-server
+    ports:
+      - "8388:8388"
