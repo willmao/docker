@@ -4,23 +4,16 @@ services:
     container_name: ss-server
     image: mritd/shadowsocks
     ports:
-      - "6500:6500/udp"
+      - "6500:6500"
     envrionment:
       - SS_MODULE=ss-server
-      - SS_CONFIG="-s 0.0.0.0 -p 6443 -m aes-256-cfb -k abc123_ --fast-open"
-      - KCP_FLAG=true
-      - KCP_MODULE=kcpserver
-      - KCP_CONFIG="-t 127.0.0.1:6443 -l :6500 -mode fast2"
+      - SS_CONFIG="-s 0.0.0.0 -p 6500 -m aes-256-cfb -k abc123_ --fast-open"
 
   ss-client:
     container_name: ss-client
     image: mritd/shadowsocks
     ports:
       - "1080:1080"
-      - "6500:6500"
     envrionment:
       - SS_MODULE=ss-client
-      - SS_CONFIG="-s 127.0.0.1 -p 6500 -b 0.0.0.0 -l 1080 -m aes-256-cfb -k abc123_ --fast-open"
-      - KCP_FLAG=true
-      - KCP_MODULE=kcpclient
-      - KCP_CONFIG="-r server_ip:6500 -l :6500 -mode fast2"
+      - SS_CONFIG="-s server_ip -p 6500 -b 0.0.0.0 -l 1080 -m aes-256-cfb -k abc123_ --fast-open"
