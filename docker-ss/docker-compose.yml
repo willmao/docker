@@ -5,11 +5,11 @@ services:
     image: willmao/shadowsocks
     ports:
       - "6500:6500"
-    entrypoint: ss-server -s 0.0.0.0 -p 6500 -m aes-256-cfb -k abc123_ --fast-openn
+    entrypoint: ss-server -s 0.0.0.0 -p 6500 -m aes-256-cfb -k abc123_ --fast-open
 
   ss-client:
     container_name: ss-client
     image: willmao/shadowsocks
     ports:
       - "1080:1080"
-    entrypoint: ss-local -s 0.0.0.0 -p 6500 -b 127.0.0.1 -l 1080 -m aes-256-cfb -k abc123_ --fast-openn
+    entrypoint: ss-local -s 0.0.0.0 -p 6500 -b 127.0.0.1 -l 1080 -m aes-256-cfb -k abc123_ --fast-open
