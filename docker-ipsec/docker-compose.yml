@@ -10,3 +10,4 @@ services:
       - "4500:4500/udp"
     volumes:
       - /lib/modules:/lib/modules:ro
+      - ./ipsec.conf:/etc/ipsec.conf
