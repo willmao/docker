@@ -10,6 +10,7 @@ services:
   ss-client:
     container_name: ss-client
     image: willmao/shadowsocks
+    restart: always
     ports:
       - "1080:1080"
     entrypoint: ss-local -s 0.0.0.0 -p 6500 -b 127.0.0.1 -l 1080 -m aes-256-cfb -k abc123_ --fast-open
