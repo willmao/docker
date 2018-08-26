@@ -4,11 +4,11 @@ My docker images repo with docker-compose files to setup common softwares!
 
 Project structure:
 
-- docker
+- /docker
 
   Contains Dockerfile to build docker images
 
-- docker-compose
+- /docker-compose
 
   Contains docker compose and config files to setup softwares 
 
