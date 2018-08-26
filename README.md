@@ -1,4 +1,4 @@
-# docker-images
+# Docker
 
 My docker images repo with docker-compose files to setup common softwares!
 
@@ -12,7 +12,7 @@ Project structure:
 
   Contains docker compose and config files to setup softwares 
 
-# Docker Image Manifest:
+## Docker Image Manifest
 
 - cow
 
@@ -26,7 +26,7 @@ Project structure:
 
   Toolbox build for devops to debug and test linux hosts with a handful of tools like iperf & netcat
 
-# Docker-compose Manifest
+## Docker-compose Manifest
 
 - ipsec
 
