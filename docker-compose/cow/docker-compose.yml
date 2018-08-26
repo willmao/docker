@@ -1,0 +1,20 @@
+version: "3"
+services:
+  cow-server:
+    build: .
+    container_name: cow-server
+    image: willmao/cow-server
+    ports:
+      - "8388:8388"
+    volumes:
+      - ./config/server:/root/.cow/rc
+
+  cow-client:
+    build: .
+    container_name: cow-client
+    image: willmao/cow-client
+    restart: always
+    ports:
+      - "7777:7777"
+    volumes:
+      - ./config/client:/root/.cow/rc

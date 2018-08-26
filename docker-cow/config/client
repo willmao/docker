@@ -1,7 +1,0 @@
-listen = http://0.0.0.0:7777
-
-proxy = cow://aes-256-cfb:Abc1234_@0.0.0.0:8388
-
-alwaysProxy = true
-
-loadBalance = latency
