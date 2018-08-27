@@ -1,0 +1,34 @@
+version: 0.1
+http:
+  secret: ArEmjXDwTkPnQMuzhqV5L687isZHWyfl
+  tls:
+    certificate: /certs/domain.crt
+    key: /certs/domain.key
+  headers:
+    X-Content-Type-Options: [nosniff]
+  http2:
+    disabled: false
+auth:
+  htpasswd:
+    realm: basic-realm
+    path: /auth/htpasswd
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+    maxthreads: 100
+  delete:
+    enabled: true
+  cache:
+    blobdescriptor: inmemory
+health:
+  http:
+    - uri: registry.sandbeach.cn
+      headers:
+        Authorization: [Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==]
+      statuscode: 200
+      timeout: 3s
+      interval: 10s
+      threshold: 3
+reporting:
+  bugsnag:
+    apikey: 05b648dc-d64b-417c-8091-cf5a196898de # personal ak, should be replaced with company ak

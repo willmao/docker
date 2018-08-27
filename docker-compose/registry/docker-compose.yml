@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  docker-registry:
+    image: registry
+    container_name: docker-registry
+    ports:
+    - 443:443 # update if run registry behind slb
+    environment:
+    - REGISTRY_HTTP_ADDR=0.0.0.0:443 # update if run registry behind slb
+    - REGISTRY_HTTP_HOST=registry.sandbeach.cn # update with registry host
+    - REGISTRY_HTTP_TLS_KEY=/certs/domain.key
+    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt
+    - REGISTRY_STORAGE_CACHE_BLOBDESCRIPTOR=inmemory
+    volumes:
+    - ./certs:/certs
+    - ./auth:/auth
+    - ./config.yml:/etc/docker/registry/config.yml
+    restart: on-failure:3
