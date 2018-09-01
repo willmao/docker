@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  reverse-proxy:
+    image: nginx:stable-alpine
+    container_name: reverse-proxy
+    restart: on-failure:3
+    network_mode: host
+    volumes:
+      - ./config/:/etc/nginx/conf.d
