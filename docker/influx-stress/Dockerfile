@@ -1,9 +1,8 @@
-FROM golang as builder
+FROM golang:alpine as builder
 
-LABEL maintainer="williamsofmao@gmail.com"
-
-RUN go get -v github.com/influxdata/influx-stress/cmd/...
-
+RUN apk add --no-cache git \
+    && go get -v github.com/influxdata/influx-stress/cmd/... \
+    && apk del git
 
 FROM alpine
 
