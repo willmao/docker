@@ -1,1 +1,1 @@
-* * * * * /root/scripts/file.sh | sponge $METRICS_ROOT/file.prom
+* * * * * /root/scripts/node_exporter.sh
