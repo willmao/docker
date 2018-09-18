@@ -1,1 +1,1 @@
-* * * * * /root/scripts/node_exporter.sh
+* * * * * /root/scripts/file.sh | sponge /data/node-exporter/file.prom
