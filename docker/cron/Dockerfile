@@ -13,4 +13,4 @@ WORKDIR /root/
 
 COPY start.sh ./
 
-ENTRYPOINT [ "/root/start.sh" ]
+CMD [ "/root/start.sh" ]
