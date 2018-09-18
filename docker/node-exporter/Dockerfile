@@ -1,4 +1,4 @@
-FROM willmao/cron
+FROM registry.cn-hangzhou.aliyuncs.com/yitdevops/cron
 
 LABEL maintainer="williamsofmao@gmail.com"
 
