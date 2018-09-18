@@ -6,3 +6,5 @@ WORKDIR /root
 
 COPY crontab /var/spool/cron/crontabs/root
 COPY scripts scripts
+
+RUN chmod 600 /var/spool/cron/crontabs/root
