@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 ZK_CLIENT_PORT=${ZK_CLIENT_PORT:-2181}
 ZK_SERVER_PORT=${ZK_SERVER_PORT:-2888}
@@ -68,7 +68,7 @@ fi
 # change own hostname to 0.0.0.0
 # otherwise, the own hostname will resolve to 127.0.0.1
 # https://stackoverflow.com/a/40750900/5764665
-fullHostname="${HOST}.${DOMAIN}"
-sed -i -e "s/${fullHostname}/0.0.0.0/g" "$CONFIG"
+# fullHostname="${HOST}.${DOMAIN}"
+# sed -i -e "s/${fullHostname}/0.0.0.0/g" "$CONFIG"
 
 exec "$@"
