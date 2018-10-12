@@ -71,4 +71,4 @@ fi
 # fullHostname="${HOST}.${DOMAIN}"
 # sed -i -e "s/${fullHostname}/0.0.0.0/g" "$CONFIG"
 
-exec "$@"
+# exec "$@"
