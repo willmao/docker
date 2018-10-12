@@ -62,7 +62,7 @@ fi
 
 # Write myid only if it doesn't exist
 if [[ ! -f "$ZOO_DATA_DIR/myid" ]]; then
-    echo "${ZOO_MY_ID:MY_ID}" > "$ZOO_DATA_DIR/myid"
+    echo "${MY_ID:1}" > "$ZOO_DATA_DIR/myid"
 fi
 
 # change own hostname to 0.0.0.0
