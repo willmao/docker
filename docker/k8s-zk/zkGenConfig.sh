@@ -72,3 +72,6 @@ fi
 # sed -i -e "s/${fullHostname}/0.0.0.0/g" "$CONFIG"
 
 # exec "$@"
+
+cat "$CONFIG"
+cat "$ZOO_DATA_DIR/myid"
