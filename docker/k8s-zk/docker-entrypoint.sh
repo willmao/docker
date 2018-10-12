@@ -65,4 +65,10 @@ if [[ ! -f "$ZOO_DATA_DIR/myid" ]]; then
     echo "${ZOO_MY_ID:MY_ID}" > "$ZOO_DATA_DIR/myid"
 fi
 
+# change own hostname to 0.0.0.0
+# otherwise, the own hostname will resolve to 127.0.0.1
+# https://stackoverflow.com/a/40750900/5764665
+fullHostname="${HOST}.${DOMAIN}"
+sed -i -e "s/${fullHostname}/0.0.0.0/g" "$CONFIG"
+
 exec "$@"
