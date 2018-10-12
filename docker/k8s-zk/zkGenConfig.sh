@@ -61,6 +61,8 @@ if [[ ! -f "$ZOO_CONF_DIR/zoo.cfg" ]]; then
 fi
 
 # Write myid only if it doesn't exist
+echo $MY_ID
+[[ -f "$ZOO_DATA_DIR/myid" ]] && cat "$ZOO_DATA_DIR/myid"
 if [[ ! -f "$ZOO_DATA_DIR/myid" ]]; then
     echo "${MY_ID:1}" > "$ZOO_DATA_DIR/myid"
 fi
